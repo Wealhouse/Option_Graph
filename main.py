@@ -4,6 +4,7 @@ import blpapi
 import pandas as pd
 import re
 import textwrap
+import subprocess
 from datetime import datetime
 from pandas import ExcelWriter
 import io
@@ -75,7 +76,7 @@ else:
 base_stock = bloomberg_ticker
 
 # --- Connect to Database ---
-cnxn = pyodbc.connect("")   # put the password here 
+cnxn = pyodbc.connect("DSN=PSC_VIEWER;UID=wealhouse-viewer;PWD=tFGWi3ak8XVcEut33FWM;DATABASE=wealhouse")
 cursor = cnxn.cursor()
 
 
