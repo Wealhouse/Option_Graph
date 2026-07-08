@@ -4,6 +4,7 @@ from tkcalendar import DateEntry
 import subprocess
 import threading
 import os
+import sys
 from datetime import datetime
 
 # --- Backend Execution ---
@@ -24,9 +25,11 @@ def run_backend():
 
     def run():
         try:
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            main_py_path = os.path.join(script_dir, "main.py")
             subprocess.run([
-                "python",
-                "main.py",       # chnage this string to the location of main.py
+                sys.executable,
+                main_py_path,
                 "--symbol", symbol,
                 "--country", country,
                 "--instrument", instrument_var.get().strip(),

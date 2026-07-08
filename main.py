@@ -608,9 +608,11 @@ if stock_irr is not None:
         stock_gain_str = "Stock Gain: \\$0.00"
     line2 = f"{option_gain_str}    |    {stock_gain_str}"
 else:
-    line2 = option_gain_str
-    
+    #line2 = option_gain_str
+    line2 = option_irr_str
+
 full_title = f"{line1}\n{line2}"
+
 
 # --- Axes ---
 ax.set_title(full_title, fontsize=18, fontweight='normal', fontname="Franklin Gothic Book", color=COLOR_PRIMARY)
